@@ -1,12 +1,13 @@
 # qr code generation script
 # takes a xlsx file and generate qr code for each row
-
 import qrcode
 import pandas as pd
 
 
 #replace this by the actual excel path
 read_file = pd.read_excel ("C:/Users/haokun/OneDrive - UW/Desktop/qr generation/aircraftnum.xlsx")
+
+# change row name accordingly
 for row in read_file['aircraft number']:
     print(row)
     qr = qrcode.QRCode(
@@ -23,3 +24,5 @@ for row in read_file['aircraft number']:
 
     img = qr.make_image()
     img.save("{}.jpg".format(labeldata))
+
+print("QR code creation done")
