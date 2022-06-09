@@ -4,10 +4,10 @@ import qrcode
 import pandas as pd
 
 
-#replace this by the actual excel path
+# replace this by the actual excel path
 read_file = pd.read_excel ("C:/Users/haokun/OneDrive - UW/Desktop/qr generation/aircraftnum.xlsx")
 
-# change row name accordingly
+# change row name accordingly or add additonal col like aircraft serial number
 for row in read_file['aircraft number']:
     print(row)
     qr = qrcode.QRCode(
